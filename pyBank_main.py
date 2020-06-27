@@ -18,22 +18,21 @@ for row in input_file:
     num = int(row['Profit/Losses'])
     date = str(row['Date'])
     total_line += 1
-    total_amount += num
-    total_avr =  total_line/total_amount
+    total_amount += num  
     if max_num == max_num < num:
         max_num = num
         current_date = date
     if low_num == low_num > num:
         low_num = num
         current_date2 = date
-   
 
+total_avr = total_line/total_amount
 
         
 print('\nFinancial Analysis')
 print('------------------------------')
-print(f'Total Months:{total_line}')
+print(f'\nTotal Months:{total_line}')
 print(f'Total: ${total_amount}')
 print(f'Average Change: ${total_avr}')
-print(f'Greatest Increase in Profits: {current_date}({max_num})')
-print(f'Greatest decrease in Profits: {current_date}({max_num})')
+print(f'Greatest Increase in Profits: {current_date} (${max_num})')
+print(f'Greatest Decrease in Profits: {current_date2} (${low_num})')
