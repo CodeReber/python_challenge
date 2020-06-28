@@ -24,11 +24,19 @@ for d in data:
         Li += 1
     elif candidates[3] in cans:
         Otooley += 1
-
-print(Khan)
-print(Correy)
-print(Li)
-print(Otooley)
+percentkhan = "{:.3%}".format(Khan/total_voters)
+percentcorrey = "{:.3%}".format(Correy/total_voters)
+percentli = "{:.3%}".format(Li/total_voters)
+percentoooley = "{:.3%}".format(Otooley/total_voters)
+print(f'\n')
 print(f'Election Results\n')
 print(f'--------------------------')
 print(f'Total Votes:  {total_voters}')
+print(f'---------------------------\n')
+print(f'Khan: {percentkhan}  ({Khan})')
+print(f'Correy: {percentcorrey}  ({Correy})')
+print(f'Li: {percentli}  ({Li})')
+print(f'O\'Tooley: {percentoooley}  ({Otooley})')
+print(f'-----------------------------\n')
+print(f'Winner Khan\n')
+print(f'------------------------------')
