@@ -79,6 +79,9 @@ for d in data:
     last = ssn.split('-')[2]
     lastfour = '***-**-'+last
     state_abbr = us_state_abbrev[d['State']]
-    emp_states = emp_states + [state_abbr]
+    # emp_states = emp_states + [state_abbr]
+    for value, key in us_state_abbrev.items():
+        if key == state_abbr:
+            emp_states = key
     
     print(empid,first_name,last_name,newdob,lastfour,emp_states)
