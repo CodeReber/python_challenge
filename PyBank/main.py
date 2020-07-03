@@ -12,6 +12,7 @@ total_amount = 0
 total_avr = 0
 max_num = 0
 low_num = 0
+prev_rev = 0
 current_date = None
 current_date2 = None  
 for row in input_file:
@@ -19,6 +20,11 @@ for row in input_file:
     date = str(row['Date'])
     total_line += 1
     total_amount += num  
+    change = num - prev_rev
+    if prev_rev == 0:
+        change = 0
+    prev_rev = num
+    total_avr += change
     if max_num == max_num < num:
         max_num = num
         current_date = date
@@ -26,14 +32,14 @@ for row in input_file:
         low_num = num
         current_date2 = date
 
-total_avr = total_line/total_amount
+total_avr = total_avr/(total_line-1)
 
         
 print('\nFinancial Analysis')
 print('------------------------------')
 print(f'\nTotal Months:{total_line}')
 print(f'Total: ${total_amount}')
-print(f'Average Change: ${total_avr}')
+print(f'Average Change: ${total_avr:.2f}')
 print(f'Greatest Increase in Profits: {current_date} (${max_num})')
 print(f'Greatest Decrease in Profits: {current_date2} (${low_num})')
 
@@ -42,6 +48,6 @@ with open('pybank_output.txt', 'w') as text:
     text.write('\n------------------------------')
     text.write(f'\nTotal Months:{total_line}')
     text.write(f'\nTotal: ${total_amount}')
-    text.write(f'\nAverage Change: ${total_avr}')
+    text.write(f'\nAverage Change: ${total_avr:.2f}')
     text.write(f'\nGreatest Increase in Profits: {current_date} (${max_num})')
     text.write(f'\nGreatest Decrease in Profits: {current_date2} (${low_num})')
