@@ -40,3 +40,17 @@ print(f'O\'Tooley: {percentoooley}  ({Otooley})')
 print(f'-----------------------------\n')
 print(f'Winner Khan\n')
 print(f'------------------------------')
+
+with open('pypoll_output.txt', 'w') as text:
+    text.write(f'Election Results\n')
+    text.write(f'--------------------------\n')
+    text.write(f'Total Votes:  {total_voters}\n')
+    text.write(f'---------------------------\n')
+    text.write(f'Khan: {percentkhan}  ({Khan})\n')
+    text.write(f'Correy: {percentcorrey}  ({Correy})\n')
+    text.write(f'Li: {percentli}  ({Li})\n')
+    text.write(f'O\'Tooley: {percentoooley}  ({Otooley})\n')
+    text.write(f'-----------------------------\n')
+    text.write(f'Winner Khan\n')
+    text.write(f'------------------------------')
+

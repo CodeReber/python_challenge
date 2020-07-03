@@ -36,3 +36,12 @@ print(f'Total: ${total_amount}')
 print(f'Average Change: ${total_avr}')
 print(f'Greatest Increase in Profits: {current_date} (${max_num})')
 print(f'Greatest Decrease in Profits: {current_date2} (${low_num})')
+
+with open('pybank_output.txt', 'w') as text:
+    text.write('Financial Analysis')
+    text.write('\n------------------------------')
+    text.write(f'\nTotal Months:{total_line}')
+    text.write(f'\nTotal: ${total_amount}')
+    text.write(f'\nAverage Change: ${total_avr}')
+    text.write(f'\nGreatest Increase in Profits: {current_date} (${max_num})')
+    text.write(f'\nGreatest Decrease in Profits: {current_date2} (${low_num})')
