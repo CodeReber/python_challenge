@@ -3,6 +3,7 @@ import csv
 from datetime import datetime
 
 csvpath = os.path.join('employee_data.csv')
+output_path = os.path.join('PyBank','Resources','outfile.txt')
 
 us_state_abbrev = {
     'Alabama': 'AL',
@@ -80,8 +81,7 @@ for d in data:
     lastfour = '***-**-'+last
     state_abbr = us_state_abbrev[d['State']]
     # emp_states = emp_states + [state_abbr]
-    for value, key in us_state_abbrev.items():
-        if key == state_abbr:
-            emp_states = key
-    
+    for key, value in us_state_abbrev.items():
+        if value == state_abbr:
+            emp_states = value
     print(empid,first_name,last_name,newdob,lastfour,emp_states)
